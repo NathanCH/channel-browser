@@ -1,0 +1,15 @@
+$panelWidth: 200px;
+
+.Sidebar{
+	z-index: 2;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: $panelWidth;
+	background: #666;
+	left: -$panelWidth;
+
+	&--show{
+		left: 0;
+	}
+}
