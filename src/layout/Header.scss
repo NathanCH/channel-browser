@@ -5,4 +5,12 @@
 	right: 0;
 	left: 0;
 	height: 40px;
+
+	&__button{
+		background: transparent;
+		border: none;
+		font-size: 28px;
+		cursor: pointer;
+		padding: 4px 10px;
+	}
 }
