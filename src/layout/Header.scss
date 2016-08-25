@@ -1,3 +1,7 @@
+$break-lg: 960px;
+$break-md: 640px;
+$break-sm: 480px;
+
 .Header{
 	background: #777;
 	position: absolute;
@@ -12,5 +16,9 @@
 		font-size: 28px;
 		cursor: pointer;
 		padding: 4px 15px;
+
+		@media (min-width: $break-lg) {
+			display: none;
+		}
 	}
 }

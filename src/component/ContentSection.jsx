@@ -5,9 +5,9 @@ class ContentSection extends Component {
 	render() {
 		return(
 			<div className="ContentSection">
-				<h1 className="ContentSection__title">
+				<div className="ContentSection__title">
 					{this.props.title}
-				</h1>
+				</div>
 				<div className="ContentSection__items">
 					{this.props.children}
 				</div>
