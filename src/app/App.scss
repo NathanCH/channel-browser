@@ -6,9 +6,19 @@
 	bottom: 0;
 	left: 0;
 	padding: 40px 0;
-}
 
-.Sidebar{
-	width: 200px;
-	background: #666;
+	&__sidebar{
+		width: 300px;
+		background: #666;
+	}
+
+	&__content{
+		position: absolute;
+		top: 40px;
+		right: 0;
+		bottom: 40px;
+		left: 0;
+		max-width: 1100px;
+		margin: 0 auto;
+	}
 }

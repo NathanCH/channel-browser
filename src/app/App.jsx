@@ -1,48 +1,49 @@
 import React, { Component } from 'react';
 import Sidebar from 'react-sidebar';
 
+import './App.scss';
+
 import Header from '../layout/Header.jsx';
 import Footer from '../layout/Footer.jsx';
 import Navigation from '../navigation/Navigation.jsx';
-
-import './App.scss';
 
 class App extends Component{
 	constructor() {
 		super();
 		this.state = {
 			sidebarOpen: false,
-			transitions: true
-		}
+			sidebarTransition: true
+		};
+		this.toggleSidebar = this.toggleSidebar.bind(this);
+		this.closeSidebar = this.closeSidebar.bind(this);
 	}
-
 	toggleSidebar(state) {
 		this.setState({
 			sidebarOpen: state,
-			transitions: true
+			sidebarTransition: true
 		});
 	}
-
-	closeSidebar(state) {
+	closeSidebar() {
 		this.setState({
 			sidebarOpen: false,
-			transitions: false
+			sidebarTransition: false
 		});
 	}
-
 	render() {
-		var sidebarContent = <Navigation onNavigate={(e) => this.closeSidebar(e)} />;
+		var sidebarContent = <Navigation onNavigate={this.closeSidebar} />;
 		return (		
 			<Sidebar sidebar={sidebarContent}
 			 		 open={this.state.sidebarOpen}
-			 		 onSetOpen={(e) => this.toggleSidebar(e)}
-			 		 sidebarClassName="Sidebar"
+			 		 onSetOpen={this.toggleSidebar}
 			 		 contentClassName="App"
-			 		 transitions={this.state.transitions}>
-				<Header onUpdate={(e) => this.toggleSidebar(e)} />
-				{this.props.children}
+			 		 sidebarClassName="App__sidebar"
+			 		 transitions={this.state.sidebarTransition}>
+				<Header onUpdate={this.toggleSidebar} />
+				<div className="App__content">
+					{this.props.children}
+				</div>
 				<Footer />
-			</Sidebar>	
+			</Sidebar>
 		)
 	}
 }

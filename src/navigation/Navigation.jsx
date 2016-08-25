@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import classNames from 'classnames';
+
 import './Navigation.scss';
 
 class Navigation extends Component{
+	constructor() {
+		super();
+		this.handleClick = this.handleClick.bind(this);
+	}
 	handleClick() {
 		this.props.onNavigate();
 	}
@@ -11,16 +16,16 @@ class Navigation extends Component{
 		return (
 			<ul className="Navigation">
 				<li href="#" className="Navigation__item">
-					<Link to="search" onClick={(e) => this.handleClick(e)} className="Navigation__link">Search</Link>
+					<Link to="search" onClick={this.handleClick} className="Navigation__link">Search</Link>
 				</li>
 				<li href="#" className="Navigation__item">
-					<Link to="home" onClick={(e) => this.handleClick(e)} className="Navigation__link">Home</Link>
+					<Link to="home" onClick={this.handleClick} className="Navigation__link">Home</Link>
 				</li>
 				<li href="#" className="Navigation__item">
-					<Link to="browse" onClick={(e) => this.handleClick(e)} className="Navigation__link">Browse</Link>
+					<Link to="browse" onClick={this.handleClick} className="Navigation__link">Browse</Link>
 				</li>
 				<li href="#" className="Navigation__item">
-					<Link to="channels" onClick={(e) => this.handleClick(e)} className="Navigation__link">My Channels</Link>
+					<Link to="channels" onClick={this.handleClick} className="Navigation__link">My Channels</Link>
 				</li>
 			</ul>
 		)
