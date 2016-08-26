@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 
 class Browse extends Component {
 	render() {
-		return(<div>Browse!</div>)
+		return(
+			<div className="Page">
+				Browse!
+			</div>
+		)
 	}
 }
 

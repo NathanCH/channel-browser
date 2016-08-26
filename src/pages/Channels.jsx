@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 
 class Channels extends Component {
 	render() {
-		return(<div>My Channel</div>)
+		return(
+			<div className="Page">
+				My Channels!
+			</div>
+		)
 	}
 }
 

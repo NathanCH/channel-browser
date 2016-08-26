@@ -13,7 +13,7 @@
   },
   "author": "Nathan Charrois",
   "license": "ISC",
-  "devDependencies" :{
+  "devDependencies": {
     "babel-core": "^6.13.2",
     "babel-loader": "^6.2.5",
     "babel-polyfill": "^6.13.0",
@@ -26,8 +26,9 @@
     "webpack": "^1.13.2"
   },
   "dependencies": {
-    "extract-text-webpack-plugin": "^1.0.1",
     "classnames": "^2.2.5",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "flux": "^2.1.1",
     "history": "^3.0.0",
     "normalize.css": "^4.2.0",
     "react": "^15.3.0",
