@@ -1,0 +1,63 @@
+$break-lg: 960px;
+$break-md: 640px;
+$break-sm: 480px;
+
+.Scrollable{
+
+	margin: 25px 0;
+
+	&__header{
+		display: flex;
+		margin: 0 0 25px;
+		border-bottom: 1px solid black;
+	}
+
+	&__label{
+		flex-grow: 1;
+		margin: 0;
+	}
+
+	&__list{
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		display: flex;
+		flex-flow: row nowrap;
+		overflow-x: hidden;
+
+		@media (max-width: $break-sm) {
+			overflow-x: scroll;
+		}
+	}
+
+	&__list-item{
+		position: relative;
+		margin: 0 5px;
+		flex-grow: 1;
+		flex-shrink: 0;
+		width: calc(20% - 10px);
+		left: 0;
+		transition: left 0.5s ease-out;
+		overflow: hidden;
+
+		&:last-child{
+			margin: 0 0 0 5px;
+		}
+
+		// 4 per row.
+		@media (max-width: $break-lg) {
+			width: calc(25% - 10px);
+		}
+
+		// 3 per row.
+		@media (max-width: $break-md) {
+			width: calc(33.333% - 10px);
+		}
+
+		// 2 per row.
+		@media (max-width: $break-sm) {
+			width: calc(50% - 10px);
+			position: unset;
+		}
+	}
+}

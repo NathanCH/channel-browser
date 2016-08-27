@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
+
 import './ContentSection.scss';
 
 class ContentSection extends Component {
+	constructor() {
+		super();
+	}
 	render() {
 		return(
 			<div className="ContentSection">
@@ -9,14 +13,6 @@ class ContentSection extends Component {
 					<div className="ContentSection__title">
 						{this.props.title}
 					</div>
-					<ul className="ContentSection__control">
-						<li className="ContentSection__control-item">
-							<a className="Button" href="#">Prev</a>
-						</li>
-						<li className="ContentSection__control-item">
-							<a className="Button" href="#">Next</a>
-						</li>
-					</ul>
 				</header>
 				<div className="ContentSection__items">
 					{this.props.children}

@@ -1,0 +1,23 @@
+$break-lg: 960px;
+$break-md: 640px;
+$break-sm: 480px;
+
+.Stepper{
+
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	@media (max-width: $break-sm) {
+		display: none;
+	}
+
+	&__item{
+		display: inline-block;
+		padding: 5px 10px;
+		cursor: pointer;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		-webkit-user-select: none;
+	}
+}

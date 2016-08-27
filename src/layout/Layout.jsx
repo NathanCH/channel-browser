@@ -14,7 +14,7 @@ class Layout extends Component {
 		this.state = {
 			sidebarOpen: false,
 			sidebarDocked: false,
-			sidebarTransition: true
+			sidebarTransition: false
 		};
 		this.toggleSidebar = this.toggleSidebar.bind(this);
 		this.closeSidebar = this.closeSidebar.bind(this);
