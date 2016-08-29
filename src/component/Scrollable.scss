@@ -4,7 +4,7 @@ $break-sm: 480px;
 
 .Scrollable{
 
-	margin: 25px 0;
+	margin: 50px 0;
 
 	&__header{
 		display: flex;
@@ -15,6 +15,7 @@ $break-sm: 480px;
 	&__label{
 		flex-grow: 1;
 		margin: 0;
+		padding: 5px;
 	}
 
 	&__list{
@@ -26,7 +27,9 @@ $break-sm: 480px;
 		overflow-x: hidden;
 
 		@media (max-width: $break-sm) {
+			-webkit-overflow-scrolling: touch;
 			overflow-x: scroll;
+			padding-bottom: 15px;
 		}
 	}
 
@@ -37,12 +40,8 @@ $break-sm: 480px;
 		flex-shrink: 0;
 		width: calc(20% - 10px);
 		left: 0;
-		transition: left 0.5s ease-out;
+		transition: left 0.4s ease-in-out;
 		overflow: hidden;
-
-		&:last-child{
-			margin: 0 0 0 5px;
-		}
 
 		// 4 per row.
 		@media (max-width: $break-lg) {
@@ -60,4 +59,9 @@ $break-sm: 480px;
 			position: unset;
 		}
 	}
+}
+
+.Scrollable__list > * {
+	-webkit-transform: translateZ(0px);
+	-webkit-transform: translate3d(0,0,0);
 }

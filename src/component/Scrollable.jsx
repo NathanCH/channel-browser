@@ -10,24 +10,34 @@ class Scrollable extends Component {
 		this.state = { index: 0 };
 		this.handleIncrement = this.handleIncrement.bind(this);
 		this.handleDecrement = this.handleDecrement.bind(this);
+		this.componentDidUpdate = this.componentDidUpdate.bind(this);
 	}
 	componentDidMount() {
-		window.addEventListener('resize', this.calcViewport.bind(this));
-		this.calcViewport();
+		window.addEventListener('resize', this.componentDidUpdate);
 	}
 	componentDidUpdate() {
 		var items = this.getItems();
+		var moveDistance = this.moveDistance();
 		for (var i = 0; i < items.length; i++) {
-			items[i].style.left = '-' + this.getItemWidth() * this.state.index + 'px';
+			items[i].style.left = '-' + moveDistance + 'px';
 		}
 	}
 	maxIncrement() {
-		return this.state.index + this.calcViewport() >= this.props.items.length;
+		return this.lastItemPosition() >= this.props.items.length - this.remainder();
 	}
 	minDecrement() {
 		return this.state.index === 0;
 	}
-	calcViewport() {
+	moveDistance() {
+		return this.state.index * this.getItemWidth();
+	}
+	remainder() {
+		return this.props.items.length % this.countVisibleItems();
+	}
+	lastItemPosition() {
+		return this.state.index + this.countVisibleItems();
+	}
+	countVisibleItems() {
 		return Math.round(this.getContainerWidth() / this.getItemWidth());
 	}
 	getContainerWidth() {
@@ -46,13 +56,13 @@ class Scrollable extends Component {
 	handleIncrement() {
 		if(this.maxIncrement()) return false;
 		this.setState({
-			index: ++this.state.index
+			index: this.state.index + this.countVisibleItems()
 		});
 	}
 	handleDecrement() {
 		if(this.minDecrement()) return false;
 		this.setState({
-			index: --this.state.index
+			index: this.state.index - this.countVisibleItems()
 		});
 	}
 	render() {

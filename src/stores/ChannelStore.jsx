@@ -13,14 +13,8 @@ class ChannelStore extends EventEmitter {
 			{ id: 6, name: '90s Output', from: 'Channel Browser', type: 'channel', thumb: 'http://placehold.it/130x130' },
 			{ id: 7, name: 'CNN LIVE', from: 'News and Events', type: 'stream', thumb: 'http://placehold.it/130x130' },
 			{ id: 8, name: 'Brtish Panel Shows', from: 'Channel Browser', type: 'channel', thumb: 'http://placehold.it/130x130' },
-			{ id: 9, name: 'Release Radar', from: 'Channel Browser', type: 'channel', thumb: 'http://placehold.it/130x130' },
-			{ id: 10, name: 'Big Brother 2', from: 'Only Reality', type: 'series', thumb: 'http://placehold.it/130x130' },
-			{ id: 11, name: 'Only Reality', from: 'Channel Browser', type: 'channel', thumb: 'http://placehold.it/130x130' },
-			{ id: 12, name: 'Sports Today', from: 'Channel Browser', type: 'channel', thumb: 'http://placehold.it/130x130' },
-			{ id: 13, name: 'Curb Your Enthusiasm', from: 'Cerebral Comedy', type: 'series', thumb: 'http://placehold.it/130x130' },
-			{ id: 14, name: '90s Output', from: 'Channel Browser', type: 'channel', thumb: 'http://placehold.it/130x130' },
-			{ id: 15, name: 'CNN LIVE', from: 'News and Events', type: 'stream', thumb: 'http://placehold.it/130x130' },
-			{ id: 16, name: 'Brtish Panel Shows', from: 'Channel Browser', type: 'channel', thumb: 'http://placehold.it/130x130' }
+			{ id: 9, name: 'Survivor', from: 'Only Reality', type: 'series', thumb: 'http://placehold.it/130x130' },
+			{ id: 10, name: 'Sports Today', from: 'Channel Browser', type: 'channel', thumb: 'http://placehold.it/130x130' },
 		];
 	}
 	createChannel(channel) {

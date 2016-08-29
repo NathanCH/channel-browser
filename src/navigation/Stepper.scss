@@ -14,10 +14,14 @@ $break-sm: 480px;
 
 	&__item{
 		display: inline-block;
-		padding: 5px 10px;
+		margin: 5px;
 		cursor: pointer;
 		-moz-user-select: none;
 		-ms-user-select: none;
 		-webkit-user-select: none;
+	}
+
+	&__button{
+		padding: 5px 15px;		
 	}
 }

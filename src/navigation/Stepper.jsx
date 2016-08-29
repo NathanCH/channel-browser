@@ -18,10 +18,10 @@ class Stepper extends Component {
 		return(
 			<ul className="Stepper">
 				<li className="Stepper__item">
-					<span className="Button" onClick={this.decrement}>Prev</span>
+					<span className="Stepper__button" onClick={this.decrement}>Prev</span>
 				</li>
 				<li className="Stepper__item">
-					<span className="Button" onClick={this.increment}>Next</span>
+					<span className="Stepper__button" onClick={this.increment}>Next</span>
 				</li>
 			</ul>
 		)

@@ -17,4 +17,16 @@ class Thumbnail extends Component {
 	}
 }
 
+Thumbnail.propTypes = {
+	title: React.PropTypes.string,
+	text: React.PropTypes.string,
+	src: React.PropTypes.string
+};
+
+Thumbnail.defaultProps = {
+	title: '',
+	text: '',
+	src: 'http://placehold.it/150x150'
+};
+
 export default Thumbnail;
