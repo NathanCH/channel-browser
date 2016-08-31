@@ -10,9 +10,9 @@ class ContentSection extends Component {
 		return(
 			<div className="ContentSection">
 				<header className="ContentSection__header">
-					<div className="ContentSection__title">
+					<h1 className="ContentSection__title">
 						{this.props.title}
-					</div>
+					</h1>
 				</header>
 				<div className="ContentSection__items">
 					{this.props.children}

@@ -1,8 +1,6 @@
 @import '../shared/variables.scss';
 
-.Scrollable{
-
-	margin: 50px 0;
+.Grid{
 
 	&__header{
 		display: flex;
@@ -17,29 +15,14 @@
 	}
 
 	&__list{
-		padding: 0;
-		margin: 0;
-		list-style: none;
 		display: flex;
-		flex-flow: row nowrap;
-		overflow-x: hidden;
-
-		@media (max-width: $break-sm) {
-			-webkit-overflow-scrolling: touch;
-			overflow-x: scroll;
-			padding-bottom: 15px;
-		}
+		flex-flow: row wrap;
 	}
 
 	&__list-item{
-		position: relative;
-		margin: 0 5px;
-		flex-grow: 1;
-		flex-shrink: 0;
+
 		width: calc(20% - 10px);
-		left: 0;
-		transition: left 0.4s ease-in-out;
-		overflow: hidden;
+		margin: 0 5px 10px 5px;
 
 		// 4 per row.
 		@media (max-width: $break-lg) {
@@ -54,12 +37,6 @@
 		// 2 per row.
 		@media (max-width: $break-sm) {
 			width: calc(50% - 10px);
-			position: unset;
 		}
 	}
-}
-
-.Scrollable__list > * {
-	-webkit-transform: translateZ(0px);
-	-webkit-transform: translate3d(0,0,0);
 }

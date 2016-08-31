@@ -1,6 +1,4 @@
-$break-lg: 960px;
-$break-md: 640px;
-$break-sm: 480px;
+@import '../shared/variables.scss';
 
 .Header{
 	background: #777;

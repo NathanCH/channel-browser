@@ -25,7 +25,7 @@ class Navigation extends Component{
 					<Link to="browse" onClick={this.handleClick} className="Navigation__link">Browse</Link>
 				</li>
 				<li href="#" className="Navigation__item">
-					<Link to="channels" onClick={this.handleClick} className="Navigation__link">My Channels</Link>
+					<Link to="saved" onClick={this.handleClick} className="Navigation__link">Saved</Link>
 				</li>
 			</ul>
 		)

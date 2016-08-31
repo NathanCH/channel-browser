@@ -1,7 +1,19 @@
 import React, { Component } from 'react';
 import './Thumbnail.scss';
 
+import dispatcher from '../dispatcher.jsx';
+
 class Thumbnail extends Component {
+	constructor() {
+		super();
+	 	this.onSave = this.onSave.bind(this);
+	}
+	onSave() {
+		dispatcher.dispatch({
+			type: 'SAVE_CHANNEL',
+			id: this.props.id
+		});
+	}
 	render() {
 		return(
 			<div className="Thumbnail">
@@ -10,6 +22,9 @@ class Thumbnail extends Component {
 					<div className="Thumbnail__content">
 						<h2 className="Thumbnail__title">{this.props.title}</h2>
 						<span className="Thumbnail__text">{this.props.text}</span>
+						<div className="Thumbnail__button" onClick={this.onSave}>
+							Save
+						</div>
 					</div>
 				</div>
 			</div>
