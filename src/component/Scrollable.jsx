@@ -82,7 +82,8 @@ class Scrollable extends Component {
 					{this.props.items.map((item, i) => {
 						return(
 							<li className="Scrollable__list-item" ref={'item-'+i}>
-								<Thumbnail 
+								<Thumbnail
+									id={item.id}
 									title={item.name}
 									text={item.from}
 									src={item.thumb}

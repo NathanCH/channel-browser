@@ -7,9 +7,9 @@ export function saveChannel(id) {
 	});
 }
 
-export function saveSeries(id) {
+export function unsaveChannel(id) {
 	dispatcher.dispatch({
-		type: 'SAVE_SERIES',
+		type: 'UNSAVE_CHANNEL',
 		id: id
 	});
 }

@@ -27,9 +27,6 @@ class Saved extends Component {
 			saved: ChannelStore.getSaved()
 		});
 	}
-	shouldComponentUpdate(nextProps, nextState) {
-		return nextProps.saved !== this.props.saved;
-	}
 	renderSavedResults() {
 		if(!this.state.saved.length) {
 			return (

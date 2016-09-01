@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import './Stepper.scss';
 
 class Stepper extends Component {
-	constructor(props) {
-		super(props);
+	constructor() {
+		super();
 		this.increment = this.increment.bind(this);
 		this.decrement = this.decrement.bind(this);
 	}

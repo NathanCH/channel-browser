@@ -5,8 +5,8 @@ class SavedStore extends EventEmitter {
 	constructor() {
 		super();
 		this.saved = [
-			{ type: 'channel', id: 2 },
-			{ type: 'channel', id: 4 }
+			{ type: 'channel', id: 4 },
+			{ type: 'channel', id: 6 }
 		];
 	}
 	getAll() {
@@ -19,10 +19,9 @@ class SavedStore extends EventEmitter {
 		});
 		this.emit('change');
 	}
-	saveSeries(id) {
-		this.saved.push({
-			type: 'series',
-			id: id
+	unsaveChannel(id) {
+		this.saved = this.saved.filter(channel => {
+			return id !== channel.id;
 		});
 		this.emit('change');
 	}
@@ -31,8 +30,8 @@ class SavedStore extends EventEmitter {
 			case 'SAVE_CHANNEL':
 				this.saveChannel(action.id);
 			break;
-			case 'SAVE_SERIES':
-				this.saveSeries(action.id);
+			case 'UNSAVE_CHANNEL':
+				this.unsaveChannel(action.id);
 			break;
 		}
 	}
