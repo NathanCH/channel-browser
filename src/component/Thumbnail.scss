@@ -1,9 +1,11 @@
+@import '../shared/variables.scss';
+
 .Thumbnail{
 
 	position: relative;
 	padding-bottom: calc(100% * 5/3);
 	text-align: left;
-	background: #999;
+	background: #282828;
 
 	&__container{
 		position: absolute;
@@ -11,7 +13,6 @@
 		right: 0;
 		bottom: 0;
 		left: 0;
-		background: #aaa;
 	}
 
 	&__image{
@@ -25,14 +26,40 @@
 	&__title{
 		font-size: 16px;
 		margin: 0 0 5px 0;
+		display: block;
+		color: $color-header;
+		text-decoration: none;
 	}
 
 	&__text{
-		font-size: 14px;
+		font-size: 13px;
 		text-transform: uppercase;
 	}
 
+	&__graphic{
+		position: relative;
+
+		&:hover .Thumbnail__image{
+			opacity: .6;
+		}
+		&:hover .Thumbnail__button{
+			display: block;
+		}
+	}
+
 	&__button{
+		display: none;
 		cursor: pointer;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-size: 42px;
+		padding: 25px;
+		color: #eee;
+
+		&--saved{
+			color: #1db954;
+		}
 	}
 }

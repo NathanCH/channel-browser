@@ -6,6 +6,7 @@ import Home from './pages/Home.jsx';
 import Search from './pages/Search.jsx';
 import Browse from './pages/Browse.jsx';
 import Saved from './pages/Saved.jsx';
+import Channel from './pages/Channel.jsx';
 
 const routes = (
 	<Route path="/" component={App}>
@@ -14,6 +15,7 @@ const routes = (
 		<Route path="search" component={Search} />
 		<Route path="browse" component={Browse} />
 		<Route path="saved" component={Saved} />
+		<Route path="channel/:id" component={Channel} />
 	</Route>
 );
 

@@ -13,7 +13,7 @@ class SearchField extends Component {
 	render() {
 		return(
 			<div className="SearchField">
-				<label className="SearchField__input">
+				<label className="SearchField__label">
 					<input className="SearchField__input" 
 						   type="text"
 						   ref="searchField"

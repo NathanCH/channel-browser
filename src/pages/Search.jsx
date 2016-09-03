@@ -35,7 +35,7 @@ class Search extends Component {
 		});
 	}
 	renderResults() {
-		var gridItems = this.state.filteredResults || this.state.channels;
+		var gridItems = this.state.filteredResults || [];
 
 		if(!gridItems.length) {
 			return (
@@ -50,7 +50,7 @@ class Search extends Component {
 	render() {
 		return(
 			<div className="Page">
-				<ContentSection title="Search!">
+				<ContentSection title="Search">
 					<SearchField onSearch={this.handleSearch} query={this.state.query} />
 					{this.renderResults()}
 				</ContentSection>

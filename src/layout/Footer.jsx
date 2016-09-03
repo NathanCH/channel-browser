@@ -5,7 +5,7 @@ class Footer extends Component{
 	render() {
 		return (
 			<footer className="Footer">
-				Footer
+				&copy; Channel Browser 2016
 			</footer>
 		)
 	}

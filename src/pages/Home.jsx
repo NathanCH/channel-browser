@@ -17,7 +17,9 @@ class Home extends Component {
 		return(
 			<div className="Page">
 				<ContentSection title="Home">
-					<Scrollable label="Channels" items={this.state.channels} />
+					<Scrollable label="Latest Channels" items={this.state.channels} />
+					<Scrollable label="Popular Now" items={this.state.channels} />
+					<Scrollable label="More Channels" items={this.state.channels} />
 				</ContentSection>
 			</div>
 		)

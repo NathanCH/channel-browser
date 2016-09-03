@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
 
-import './Thumbnail.scss';
+import './ChannelSection.scss';
 
 import dispatcher from '../dispatcher.jsx';
 
 import SavedStore from '../stores/SavedStore.jsx';
 import ChannelStore from '../stores/ChannelStore.jsx';
 
-class Thumbnail extends Component {
+class ChannelSection extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -37,58 +36,60 @@ class Thumbnail extends Component {
 			id: this.props.id
 		});
 	}
-	setSaved() {
-		this.setState({
-			saved: this.isSaved()
-		});
-	}
 	isSaved() {
 		return ChannelStore.isSaved(this.props.id);
 	}
 	renderSaveToggle() {
 		if(this.isSaved()) {
 			return(
-				<div className="Thumbnail__button Thumbnail__button--saved" onClick={this.unsave}>
-					<i className="ion ion-android-favorite"></i>
+				<div className="ChannelSection__button ChannelSection__button--saved" onClick={this.unsave}>
+					Saved
 				</div>
 			);
 		}
 		return (
-			<div className="Thumbnail__button" onClick={this.save}>
-				<i className="ion ion-android-favorite-outline"></i>
+			<div className="ChannelSection__button" onClick={this.save}>
+				Save
 			</div>
 		)
 	}
+	setSaved() {
+		this.setState({
+			saved: this.isSaved()
+		});
+	}
 	render() {
 		return(
-			<div className="Thumbnail">
-				<div className="Thumbnail__container">
-					<div className="Thumbnail__graphic">
-						<img src={this.props.src} className="Thumbnail__image" />
+			<div className="ChannelSection">
+				<header className="ChannelSection__header">
+					<div className="ChannelSection__graphic">
+						<img className="ChannelSection__image" src={this.props.thumb} />
+					</div>
+					<div className="ChannelSection__meta">
+						<h1 className="ChannelSection__title">
+							{this.props.title}
+						</h1>
 						{this.renderSaveToggle()}
 					</div>
-					<div className="Thumbnail__content">
-						<Link to={`/channel/${this.props.id}`} className="Thumbnail__title">
-							{this.props.title}
-						</Link>
-						<span className="Thumbnail__text">{this.props.text}</span>
-					</div>
+				</header>
+				<div className="ChannelSection__items">
+					{this.props.children}
 				</div>
 			</div>
 		)
 	}
 }
 
-Thumbnail.propTypes = {
+ChannelSection.propTypes = {
+	id: React.PropTypes.id,
 	title: React.PropTypes.string,
-	text: React.PropTypes.string,
-	src: React.PropTypes.string
+	thumb: React.PropTypes.string
 };
 
-Thumbnail.defaultProps = {
+ChannelSection.defaultProps = {
+	id: null,
 	title: '',
-	text: '',
-	src: 'http://placehold.it/150x150'
+	thumb: ''
 };
 
-export default Thumbnail;
+export default ChannelSection;

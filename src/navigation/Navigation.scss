@@ -1,0 +1,33 @@
+@import '../shared/variables.scss';
+
+.Navigation{
+
+	&__label{
+		text-transform: uppercase;
+		font-size: 14px;
+		letter-spacing: 1px;
+	}	
+	&__list{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	&__list-item{
+		margin: 5px 0;
+	}
+	&__link{
+		color: $color-body;
+		font-size: 18px;
+		text-decoration: none;
+		display: block;
+		padding: 5px 0;
+
+		&:hover{
+			color: $color-body-hover;
+		}
+
+		.ion{
+			padding-right: 10px;
+		}
+	}
+}

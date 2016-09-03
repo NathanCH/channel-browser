@@ -14,20 +14,33 @@ class Navigation extends Component{
 	}
 	render() {
 		return (
-			<ul className="Navigation">
-				<li href="#" className="Navigation__item">
-					<Link to="search" onClick={this.handleClick} className="Navigation__link">Search</Link>
-				</li>
-				<li href="#" className="Navigation__item">
-					<Link to="home" onClick={this.handleClick} className="Navigation__link">Home</Link>
-				</li>
-				<li href="#" className="Navigation__item">
-					<Link to="browse" onClick={this.handleClick} className="Navigation__link">Browse</Link>
-				</li>
-				<li href="#" className="Navigation__item">
-					<Link to="saved" onClick={this.handleClick} className="Navigation__link">Saved</Link>
-				</li>
-			</ul>
+			<div className="Navigation">
+				<div className="Navigation__label">
+					Main
+				</div>
+				<ul className="Navigation__list">
+					<li href="#" className="Navigation__list-item">
+						<Link to="search" onClick={this.handleClick} className="Navigation__link">
+							<i className="ion ion-search"></i> Search
+						</Link>
+					</li>
+					<li href="#" className="Navigation__list-item">
+						<Link to="home" onClick={this.handleClick} className="Navigation__link">
+							<i className="ion ion-home"></i> Home
+						</Link>
+					</li>
+					<li href="#" className="Navigation__list-item">
+						<Link to="browse" onClick={this.handleClick} className="Navigation__link">
+							<i className="ion ion-filing"></i> Browse
+						</Link>
+					</li>
+					<li href="#" className="Navigation__list-item">
+						<Link to="saved" onClick={this.handleClick} className="Navigation__link">
+							<i className="ion ion-android-favorite"></i> Saved
+						</Link>
+					</li>
+				</ul>
+			</div>
 		)
 	}
 }

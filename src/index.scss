@@ -1,4 +1,5 @@
 @import "~normalize.css/normalize.css";
+@import './shared/variables.scss';
 
 *{
 	box-sizing: border-box;
@@ -9,5 +10,6 @@ body{
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 22px;
-	background: #555;
+	color: $color-body;
+	background: #181818;
 }

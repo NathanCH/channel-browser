@@ -1,0 +1,45 @@
+@import '../shared/variables.scss';
+
+.Table{
+	width: 100%;
+	border-collapse: collapse;
+
+	&__header{
+		text-align: left;
+	}
+
+	&__row{
+		border-bottom: 1px solid #333;
+	}
+
+	&__row td,
+	&__row th{
+		padding: 8px 4px;
+	}
+
+	/* Modifiers */
+	&--align-right{
+		text-align: right;
+	}
+
+	/* Columns */
+	&__column{
+		&--action{
+			cursor: pointer;
+		}
+		&--mobile{
+			display: none;
+			font-size: 14px;
+			color: #555;
+		}
+		@media (max-width: $break-sm) {
+			&--id,
+			&--from{
+				display: none;
+			}
+			&--mobile{
+				display: block;
+			}
+		}
+	}
+}
