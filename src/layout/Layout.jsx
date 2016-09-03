@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 import './Layout.scss';
 
 import Header from './Header.jsx';
-import Footer from './Footer.jsx';
 import Navigation from '../navigation/Navigation.jsx';
 import Sidebar from 'react-sidebar';
 
@@ -57,6 +56,7 @@ class Layout extends Component {
 			}
 		};
 
+
 		return (		
 			<Sidebar sidebar={sidebarContent}
 			 		 open={this.state.sidebarOpen}
@@ -67,9 +67,8 @@ class Layout extends Component {
 			 		 transitions={this.state.sidebarTransition}
 			 		 shadow={false}
 			 		 styles={styles}>
-				<Header onUpdate={this.toggleSidebar} />
+				<Header onUpdate={this.toggleSidebar} title={this.props.title} />
 				{this.props.children}
-				<Footer />
 			</Sidebar>
 		)
 	}

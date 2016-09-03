@@ -7,6 +7,7 @@ import ContentSection from '../component/ContentSection.jsx';
 import SearchField from '../component/SearchField.jsx';
 import Grid from '../component/Grid.jsx';
 import NoResults from '../component/NoResults.jsx';
+import Footer from '../layout/Footer.jsx';
 
 class Search extends Component {
 	constructor() {
@@ -50,7 +51,10 @@ class Search extends Component {
 	render() {
 		return(
 			<div className="Page">
-				<ContentSection title="Search">
+				<ContentSection title={this.props.route.title}>
+					<div className="Page__lead">
+						What are you looking for?
+					</div>
 					<SearchField onSearch={this.handleSearch} query={this.state.query} />
 					{this.renderResults()}
 				</ContentSection>

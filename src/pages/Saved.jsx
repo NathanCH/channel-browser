@@ -7,6 +7,7 @@ import ChannelStore from '../stores/ChannelStore.jsx';
 import ContentSection from '../component/ContentSection.jsx';
 import Grid from '../component/Grid.jsx';
 import NoResults from '../component/NoResults.jsx';
+import Footer from '../layout/Footer.jsx';
 
 class Saved extends Component {
 	constructor() {
@@ -41,9 +42,10 @@ class Saved extends Component {
 	render() {
 		return(
 			<div className="Page">
-				<ContentSection title="Saved Items">
+				<ContentSection title={this.props.route.title}>
 					{this.renderSavedResults()}
 				</ContentSection>
+				<Footer />
 			</div>
 		);
 	}

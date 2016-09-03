@@ -64,7 +64,9 @@ class Thumbnail extends Component {
 			<div className="Thumbnail">
 				<div className="Thumbnail__container">
 					<div className="Thumbnail__graphic">
-						<img src={this.props.src} className="Thumbnail__image" />
+						<Link to={`/channel/${this.props.id}`}>
+							<img src={this.props.src} className="Thumbnail__image" />
+						</Link>
 						{this.renderSaveToggle()}
 					</div>
 					<div className="Thumbnail__content">

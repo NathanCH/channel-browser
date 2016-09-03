@@ -6,10 +6,14 @@
 	max-width: $break-lg;
 
 	&__header{
-		display: flex;
+		display: none;
 		flex-direction: row;
 		justify-content: space-between;
 		padding: 15px 0;
+
+		@media (min-width: $break-lg) {
+			display: flex;
+		}
 	}
 
 	&__title{

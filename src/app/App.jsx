@@ -8,7 +8,7 @@ class App extends Component{
 	render() {
 		return (
 			<div className="App">		
-				<Layout>
+				<Layout title={this.props.location.pathname.substring(1).split("/")[0]}>
 					{this.props.children}
 				</Layout>
 			</div>

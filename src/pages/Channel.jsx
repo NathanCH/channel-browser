@@ -5,6 +5,7 @@ import './Page.scss';
 import Table from '../component/Table.jsx';
 import ChannelStore from '../stores/ChannelStore.jsx';
 import ChannelSection from '../component/ChannelSection.jsx';
+import Footer from '../layout/Footer.jsx';
 
 class Channel extends Component {
 	constructor(props) {
@@ -27,6 +28,7 @@ class Channel extends Component {
 				<ChannelSection id={this.state.meta.id} title={this.state.meta.name} thumb={this.state.meta.thumb}>
 					<Table items={this.state.episodes} />
 				</ChannelSection>
+				<Footer />
 			</div>
 		)
 	}

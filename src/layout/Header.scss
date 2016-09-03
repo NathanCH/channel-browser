@@ -20,4 +20,17 @@
 			display: none;
 		}
 	}
+
+	&__text{
+		line-height: 40px;
+		padding: 0 5px;
+		color: $color-header;
+		display: inline-block;
+		vertical-align: top;
+		text-transform: capitalize;
+
+		@media (min-width: $break-lg) {
+			display: none;
+		}
+	}
 }

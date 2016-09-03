@@ -5,6 +5,7 @@ import './Page.scss';
 import ChannelStore from '../stores/ChannelStore.jsx';
 import ContentSection from '../component/ContentSection.jsx';
 import Grid from '../component/Grid.jsx';
+import Footer from '../layout/Footer.jsx';
 
 class Browse extends Component {
 	constructor() {
@@ -16,9 +17,10 @@ class Browse extends Component {
 	render() {
 		return(
 			<div className="Page">
-				<ContentSection title="Browse">
+				<ContentSection title={this.props.route.title}>
 					<Grid items={this.state.channels} />
 				</ContentSection>
+				<Footer />
 			</div>
 		)
 	}

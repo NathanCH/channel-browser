@@ -13,6 +13,9 @@ class Header extends Component{
 		return (
 			<header className="Header">
 				<button onClick={this.handleClick} className="Header__button ion-navicon"></button>
+				<div className="Header__text">
+					{this.props.title}
+				</div>
 			</header>
 		)
 	}

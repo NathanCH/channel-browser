@@ -1,8 +1,17 @@
+@import '../shared/variables.scss';
+
 .Page{
 	width: 100%;
 	overflow-y: scroll;
 	padding: 0 20px;
 	-webkit-overflow-scrolling: touch;
+
+	&__lead{
+		margin: 50px 0 40px;
+		text-align: center;
+		font-size: 22px;
+		color: $color-header;
+	}
 }
 
 .Page > * {
